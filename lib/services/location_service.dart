@@ -1,25 +1,28 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-class LocationService with ChangeNotifier {
-  Position? _currentPosition;
-  String _cityName = '';
+class LocationService {
+  Future<Position> getCurrentLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
 
-  Position? get currentLocation => _currentPosition;
-  String get cityName => _cityName;
-
-  LocationService() {
-    getCurrentLocation();
-  }
-
-  Future<void> getCurrentLocation() async {
-    try {
-      _currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-      // Implement logic to get city name from coordinates
-      _cityName = 'Dummy City';
-    } catch (e) {
-      // Handle error
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled.');
     }
-    notifyListeners();
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    return await Geolocator.getCurrentPosition();
   }
 }

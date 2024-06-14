@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'providers/prayer_times_provider.dart';
 import 'screens/home_screen.dart';
-import 'services/location_service.dart';
-import 'services/prayer_time_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,13 +10,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => LocationService()),
-        ChangeNotifierProvider(create: (_) => PrayerTimeService()),
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => PrayerTimesProvider(),
       child: MaterialApp(
-        title: 'Prayer Time',
+        title: 'Prayer Times',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

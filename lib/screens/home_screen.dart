@@ -1,64 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../providers/prayer_times_provider.dart';
 import 'prayer_detail_screen.dart';
-import '../services/location_service.dart';
-import '../services/prayer_time_service.dart';
-import '../models/prayer_model.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<PrayerTimesProvider>(context, listen: false).fetchPrayerTimes();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final locationService = Provider.of<LocationService>(context);
-    final prayerTimeService = Provider.of<PrayerTimeService>(context);
-
-    if (locationService.currentLocation == null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Prayer Time'),
-        ),
-        body: Center(child: CircularProgressIndicator()),
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prayer Time'),
+        title: Text('Prayer Times'),
       ),
-      body: FutureBuilder(
-        future: prayerTimeService.getPrayerTimes(locationService.currentLocation!),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+      body: Consumer<PrayerTimesProvider>(
+        builder: (context, provider, child) {
+          if (provider.prayerTimes.isEmpty) {
             return Center(child: CircularProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return Center(child: Text('Error fetching prayer times'));
-          }
-          final prayerTimes = snapshot.data as List<Prayer>;
-          return Column(
-            children: [
-              Text('City: ${locationService.cityName}'),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: prayerTimes.length,
-                  itemBuilder: (context, index) {
-                    final prayer = prayerTimes[index];
-                    return ListTile(
-                      title: Text(prayer.name),
-                      subtitle: Text(prayer.time),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PrayerDetailScreen(prayer: prayer),
-                          ),
-                        );
-                      },
+          } else {
+            return ListView.builder(
+              itemCount: provider.prayerTimes.keys.length,
+              itemBuilder: (context, index) {
+                String key = provider.prayerTimes.keys.elementAt(index);
+                return ListTile(
+                  title: Text(key),
+                  subtitle: Text(provider.prayerTimes[key]),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PrayerDetailScreen(prayerName: key),
+                      ),
                     );
                   },
-                ),
-              ),
-            ],
-          );
+                );
+              },
+            );
+          }
         },
       ),
     );
