@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/audio/sunrise_step_1.mp3" afterDir="false" />
+    <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="adding prayer steps">
+      <change afterPath="$PROJECT_DIR$/lib/widgets/prayer_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/asr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/asr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/dhuhr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/dhuhr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/fajr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/fajr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/isha.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/isha.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/maghrib.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/maghrib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prayers/sunrise.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/sunrise.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;essidsolutions&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/essidsolutions/prayer_time&quot;,
+    &quot;accountId&quot;: &quot;d18e5943-b515-405b-b2d7-a671ce0cc44e&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -59,22 +71,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Flutter.main.dart.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mcessid/StudioProjects/prayer_time/assets/audio",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mcessid/StudioProjects/prayer_time/assets/audio&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/audio" />
@@ -96,6 +108,15 @@
       <option name="presentableId" value="Default" />
       <updated>1718368026882</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding prayer steps">
+      <option name="closed" value="true" />
+      <created>1718384632950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718384632950</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -103,5 +124,9 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding prayer steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding prayer steps" />
   </component>
 </project>
