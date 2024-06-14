@@ -3,13 +3,14 @@ import 'package:provider/provider.dart';
 import 'providers/prayer_times_provider.dart';
 import 'providers/settings_provider.dart';
 import 'screens/home_screen.dart';
-import 'screens/settings_screen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -21,7 +22,23 @@ class MyApp extends StatelessWidget {
         builder: (context, settingsProvider, child) {
           return MaterialApp(
             title: 'Prayer Times',
-            theme: settingsProvider.isDarkMode ? ThemeData.dark() : ThemeData.light(),
+            theme: ThemeData(
+              brightness: settingsProvider.isDarkMode ? Brightness.dark : Brightness.light,
+              textTheme: TextTheme(
+                titleLarge: TextStyle(
+                  fontFamily: settingsProvider.selectedFont,
+                  fontSize: settingsProvider.fontSize,
+                  fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
+                  fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
+                ),
+                bodyLarge: TextStyle(
+                  fontFamily: settingsProvider.selectedFont,
+                  fontSize: settingsProvider.fontSize,
+                  fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
+                  fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
+                ),
+              ),
+            ),
             home: HomeScreen(),
           );
         },

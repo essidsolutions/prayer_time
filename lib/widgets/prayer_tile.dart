@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/settings_provider.dart';
 
 class PrayerTile extends StatelessWidget {
   final String name;
   final String time;
-  final IconData icon;
+  final IconData icon; // Use IconData instead of custom icon path
   final Color iconColor;
   final Color borderColor;
   final VoidCallback onTap;
@@ -21,8 +19,6 @@ class PrayerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final settingsProvider = Provider.of<SettingsProvider>(context);
-
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
@@ -30,26 +26,21 @@ class PrayerTile extends StatelessWidget {
       ),
       elevation: 5,
       child: ListTile(
-        leading: Icon(icon, color: iconColor),
+        leading: Icon(icon, color: iconColor), // Use built-in Flutter icon
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               name,
               style: TextStyle(
-                fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
-                fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
-                fontSize: settingsProvider.fontSize,
-                fontFamily: settingsProvider.selectedFont,
-                color: settingsProvider.isDarkMode ? Colors.white : Colors.black,
+                fontWeight: FontWeight.normal,
+                fontSize: 18,
               ),
             ),
             Text(
               time,
               style: TextStyle(
-                color: settingsProvider.isDarkMode ? Colors.white : Colors.grey,
-                fontSize: settingsProvider.fontSize,
-                fontFamily: settingsProvider.selectedFont,
+                color: Colors.grey,
               ),
             ),
           ],

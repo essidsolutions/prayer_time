@@ -6,12 +6,14 @@ class SettingsProvider with ChangeNotifier {
   double _fontSize = 16.0;
   bool _isBold = false;
   bool _isItalic = false;
+  bool _is24HourFormat = true; // New field for time format
 
   bool get isDarkMode => _isDarkMode;
   String get selectedFont => _selectedFont;
   double get fontSize => _fontSize;
   bool get isBold => _isBold;
   bool get isItalic => _isItalic;
+  bool get is24HourFormat => _is24HourFormat; // Getter for time format
 
   void toggleDarkMode() {
     _isDarkMode = !_isDarkMode;
@@ -35,6 +37,11 @@ class SettingsProvider with ChangeNotifier {
 
   void toggleItalic() {
     _isItalic = !_isItalic;
+    notifyListeners();
+  }
+
+  void toggleTimeFormat() { // Method to toggle time format
+    _is24HourFormat = !_is24HourFormat;
     notifyListeners();
   }
 }
