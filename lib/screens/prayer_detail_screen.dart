@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
+import '../models/prayer_model.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
-class Prayer {
-  final String name;
-  final String time;
-  final int rakaat;
-
-  Prayer({required this.name, required this.time, required this.rakaat});
-}
 
 class PrayerDetailScreen extends StatelessWidget {
   final Prayer prayer;

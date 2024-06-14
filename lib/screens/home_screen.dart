@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'prayer_detail_screen.dart';
 import '../services/location_service.dart';
 import '../services/prayer_time_service.dart';
+import '../models/prayer_model.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -10,12 +11,21 @@ class HomeScreen extends StatelessWidget {
     final locationService = Provider.of<LocationService>(context);
     final prayerTimeService = Provider.of<PrayerTimeService>(context);
 
+    if (locationService.currentLocation == null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Prayer Time'),
+        ),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Prayer Time'),
       ),
       body: FutureBuilder(
-        future: prayerTimeService.getPrayerTimes(locationService.currentLocation),
+        future: prayerTimeService.getPrayerTimes(locationService.currentLocation!),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
@@ -23,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           if (snapshot.hasError) {
             return Center(child: Text('Error fetching prayer times'));
           }
-          final prayerTimes = snapshot.data;
+          final prayerTimes = snapshot.data as List<Prayer>;
           return Column(
             children: [
               Text('City: ${locationService.cityName}'),
