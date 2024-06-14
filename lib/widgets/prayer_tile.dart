@@ -3,49 +3,40 @@ import 'package:flutter/material.dart';
 class PrayerTile extends StatelessWidget {
   final String name;
   final String time;
-  final IconData icon; // Use IconData instead of custom icon path
+  final IconData icon;
   final Color iconColor;
   final Color borderColor;
   final VoidCallback onTap;
 
-  PrayerTile({
+  const PrayerTile({
+    Key? key,
     required this.name,
     required this.time,
     required this.icon,
     required this.iconColor,
     required this.borderColor,
     required this.onTap,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-        side: BorderSide(color: borderColor, width: 1),
-      ),
-      elevation: 5,
-      child: ListTile(
-        leading: Icon(icon, color: iconColor), // Use built-in Flutter icon
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 4.0),
+        padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        decoration: BoxDecoration(
+          border: Border.all(color: borderColor),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Row(
           children: [
-            Text(
-              name,
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 18,
-              ),
-            ),
-            Text(
-              time,
-              style: TextStyle(
-                color: Colors.grey,
-              ),
-            ),
+            Icon(icon, color: iconColor),
+            SizedBox(width: 16.0),
+            Expanded(child: Text(name, style: TextStyle(fontSize: 18.0))),
+            Text(time, style: TextStyle(fontSize: 18.0)),
           ],
         ),
-        onTap: onTap,
       ),
     );
   }

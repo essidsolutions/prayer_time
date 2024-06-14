@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="adding fonts">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/models/prayer_time_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/date_utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/providers/prayer_times_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/prayer_times_provider.dart" afterDir="false" />
@@ -21,8 +21,6 @@
       <change beforePath="$PROJECT_DIR$/lib/services/location_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/location_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/prayer_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/prayer_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

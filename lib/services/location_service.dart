@@ -30,6 +30,9 @@ class LocationService {
   Future<String> getAddressFromCoordinates(Position position) async {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
+      if (placemarks.isEmpty) {
+        throw Exception('No placemarks found');
+      }
       Placemark place = placemarks[0];
       return "${place.locality}, ${place.country}";
     } catch (e) {

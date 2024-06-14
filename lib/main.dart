@@ -37,6 +37,12 @@ class MyApp extends StatelessWidget {
                   fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
                   fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
                 ),
+                bodyMedium: TextStyle(
+                  fontFamily: settingsProvider.selectedFont,
+                  fontSize: settingsProvider.fontSize,
+                  fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
+                  fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
+                ),
               ),
             ),
             home: HomeScreen(),
