@@ -22,17 +22,20 @@ class _PrayerDetailScreenState extends State<PrayerDetailScreen> {
       case 'fajr':
         fileName = 'prayers/fajr.json';
         break;
+      case 'sunrise':
+        fileName = 'prayers/sunrise.json';
+        break;
       case 'dhuhr':
-        fileName = 'assets/dhuhr.json';
+        fileName = 'prayers/dhuhr.json';
         break;
       case 'asr':
-        fileName = 'assets/asr.json';
+        fileName = 'prayers/asr.json';
         break;
       case 'maghrib':
-        fileName = 'assets/maghrib.json';
+        fileName = 'prayers/maghrib.json';
         break;
       case 'isha':
-        fileName = 'assets/isha.json';
+        fileName = 'prayers/isha.json';
         break;
       default:
         throw Exception('Unknown prayer name: ${widget.prayerName}');

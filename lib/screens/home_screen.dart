@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prayer Times'),
+        title: Text('PrayerTime'),
       ),
       body: Consumer<PrayerTimesProvider>(
         builder: (context, provider, child) {

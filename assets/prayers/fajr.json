@@ -1,7 +1,7 @@
 {
   "FajrPrayer": {
     "name": "Fajr",
-    "time": "Fajr",
+    "time": "Morning",
     "total_rakaa": 2,
     "estimated_duration_minutes": 10,
     "steps": [

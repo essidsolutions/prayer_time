@@ -5,29 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/audio/fajr_step_1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/asr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/dhuhr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/fajr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/isha.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/maghrib.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/prayers/sunrise.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/providers/prayer_times_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/sunrise_step_1.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/prayer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/prayer_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/asr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/asr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/dhuhr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/dhuhr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/fajr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/fajr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/isha.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/isha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/maghrib.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/maghrib.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/sunrise.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/sunrise.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/location_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/location_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
