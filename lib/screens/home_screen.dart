@@ -8,6 +8,7 @@ import 'settings_screen.dart';
 import '../utils/date_utils.dart';
 import 'package:intl/intl.dart';
 import '../models/prayer_time_model.dart';
+import '../localizations/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -50,29 +51,29 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Add Custom Prayer'),
+          title: Text(AppLocalizations.of(context)!.translate('add_custom_prayer')),
           content: SingleChildScrollView(
             child: Column(
               children: [
                 TextField(
                   controller: prayerNameController,
-                  decoration: InputDecoration(labelText: 'Prayer Name'),
+                  decoration: InputDecoration(labelText: AppLocalizations.of(context)!.translate('prayer_name')),
                 ),
                 TextField(
                   controller: prayerTimeController,
-                  decoration: InputDecoration(labelText: 'Prayer Time (HH:mm)'),
+                  decoration: InputDecoration(labelText: AppLocalizations.of(context)!.translate('prayer_time')),
                 ),
                 TextField(
                   controller: prayerIconController,
-                  decoration: InputDecoration(labelText: 'Icon'),
+                  decoration: InputDecoration(labelText: AppLocalizations.of(context)!.translate('icon')),
                 ),
                 TextField(
                   controller: prayerDescriptionController,
-                  decoration: InputDecoration(labelText: 'Description'),
+                  decoration: InputDecoration(labelText: AppLocalizations.of(context)!.translate('description')),
                 ),
                 TextField(
                   controller: prayerRakaaController,
-                  decoration: InputDecoration(labelText: 'Rakaa'),
+                  decoration: InputDecoration(labelText: AppLocalizations.of(context)!.translate('rakaa')),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: Text(AppLocalizations.of(context)!.translate('cancel')),
             ),
             TextButton(
               onPressed: () {
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Provider.of<PrayerTimesProvider>(context, listen: false).addCustomPrayer(prayer);
                 Navigator.of(context).pop();
               },
-              child: Text('Add'),
+              child: Text(AppLocalizations.of(context)!.translate('add')),
             ),
           ],
         );
@@ -119,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: bgColor,
         iconTheme: IconThemeData(color: borderColor),
-        title: Text('Prayer Times', style: textTheme.titleLarge?.copyWith(color: borderColor)),
+        title: Text(AppLocalizations.of(context)!.translate('title'), style: textTheme.titleLarge?.copyWith(color: borderColor)),
         leading: IconButton(
           icon: Icon(Icons.add, color: borderColor),
           onPressed: () {
@@ -163,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: textTheme.titleLarge?.copyWith(color: Colors.black),
                     ),
                     Text(
-                      prayerTimesProvider.hijriDate.isNotEmpty ? prayerTimesProvider.hijriDate : 'Fetching...',
+                      prayerTimesProvider.hijriDate.isNotEmpty ? prayerTimesProvider.hijriDate : AppLocalizations.of(context)!.translate('fetching'),
                       style: textTheme.bodyMedium?.copyWith(color: Colors.black),
                     ),
                   ],
@@ -191,14 +192,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   } else {
                     final prayerTimes = provider.prayerTimes!;
                     final orderedPrayers = [
-                      {'name': 'Imsak', 'time': prayerTimes.imsak, 'icon': Icons.access_time, 'iconColor': Colors.teal},
-                      {'name': 'Fajr', 'time': prayerTimes.fajr, 'icon': Icons.brightness_5, 'iconColor': Colors.blue},
-                      {'name': selectedDate.weekday == DateTime.friday ? 'Jumaa' : 'Dhuhr', 'time': selectedDate.weekday == DateTime.friday ? '13:00' : prayerTimes.dhuhr, 'icon': Icons.brightness_6, 'iconColor': Colors.orange},
-                      {'name': 'Asr', 'time': prayerTimes.asr, 'icon': Icons.brightness_7, 'iconColor': Colors.deepOrange},
-                      {'name': 'Maghrib', 'time': prayerTimes.maghrib, 'icon': Icons.brightness_4, 'iconColor': Colors.redAccent},
-                      {'name': 'Isha', 'time': prayerTimes.isha, 'icon': Icons.brightness_3, 'iconColor': Colors.indigo},
-                      {'name': 'Midnight', 'time': prayerTimes.midnight, 'icon': Icons.access_time, 'iconColor': Colors.cyan},
-                      {'name': 'Last Third', 'time': prayerTimes.lastThird, 'icon': Icons.access_time, 'iconColor': Colors.deepPurple},
+                      {'name': AppLocalizations.of(context)!.translate('imsak'), 'time': prayerTimes.imsak, 'icon': Icons.access_time, 'iconColor': Colors.teal},
+                      {'name': AppLocalizations.of(context)!.translate('fajr'), 'time': prayerTimes.fajr, 'icon': Icons.brightness_5, 'iconColor': Colors.blue},
+                      {'name': selectedDate.weekday == DateTime.friday ? AppLocalizations.of(context)!.translate('jumaa') : AppLocalizations.of(context)!.translate('dhuhr'), 'time': selectedDate.weekday == DateTime.friday ? '13:00' : prayerTimes.dhuhr, 'icon': Icons.brightness_6, 'iconColor': Colors.orange},
+                      {'name': AppLocalizations.of(context)!.translate('asr'), 'time': prayerTimes.asr, 'icon': Icons.brightness_7, 'iconColor': Colors.deepOrange},
+                      {'name': AppLocalizations.of(context)!.translate('maghrib'), 'time': prayerTimes.maghrib, 'icon': Icons.brightness_4, 'iconColor': Colors.redAccent},
+                      {'name': AppLocalizations.of(context)!.translate('isha'), 'time': prayerTimes.isha, 'icon': Icons.brightness_3, 'iconColor': Colors.indigo},
+                      {'name': AppLocalizations.of(context)!.translate('midnight'), 'time': prayerTimes.midnight, 'icon': Icons.access_time, 'iconColor': Colors.cyan},
+                      {'name': AppLocalizations.of(context)!.translate('last_third'), 'time': prayerTimes.lastThird, 'icon': Icons.access_time, 'iconColor': Colors.deepPurple},
                     ];
 
                     final customPrayers = prayerTimes.customPrayers.map((prayer) => {

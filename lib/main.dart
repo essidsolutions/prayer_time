@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'providers/prayer_times_provider.dart';
 import 'providers/settings_provider.dart';
 import 'screens/home_screen.dart';
+import 'localizations/app_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,6 +47,17 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
+            locale: settingsProvider.locale,
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: [
+              Locale('en', ''),
+              Locale('ar', ''),
+            ],
             home: HomeScreen(),
           );
         },

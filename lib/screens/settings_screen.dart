@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/settings_provider.dart';
 import '../providers/prayer_times_provider.dart';
+import '../localizations/app_localizations.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
-        title: Text('Settings', style: TextStyle(color: Colors.black)),
+        title: Text(AppLocalizations.of(context)!.translate('settings'), style: TextStyle(color: Colors.black)),
         leading: IconButton(
           icon: Icon(Icons.home, color: Colors.black),
           onPressed: () {
@@ -29,14 +30,14 @@ class SettingsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SwitchListTile(
-                title: Text('Dark Mode', style: TextStyle(color: Colors.black)),
+                title: Text(AppLocalizations.of(context)!.translate('dark_mode'), style: TextStyle(color: Colors.black)),
                 value: settingsProvider.isDarkMode,
                 onChanged: (value) {
                   settingsProvider.toggleDarkMode();
                 },
               ),
               SizedBox(height: 10),
-              Text('Font', style: TextStyle(color: Colors.black)),
+              Text(AppLocalizations.of(context)!.translate('font'), style: TextStyle(color: Colors.black)),
               DropdownButton<String>(
                 value: settingsProvider.selectedFont,
                 onChanged: (String? newValue) {
@@ -51,7 +52,7 @@ class SettingsScreen extends StatelessWidget {
                 }).toList(),
               ),
               SizedBox(height: 10),
-              Text('Font Size', style: TextStyle(color: Colors.black)),
+              Text(AppLocalizations.of(context)!.translate('font_size'), style: TextStyle(color: Colors.black)),
               Slider(
                 label: 'Font Size',
                 min: 10,
@@ -62,12 +63,12 @@ class SettingsScreen extends StatelessWidget {
                 },
               ),
               SizedBox(height: 10),
-              Text('Font Style', style: TextStyle(color: Colors.black)),
+              Text(AppLocalizations.of(context)!.translate('font_style'), style: TextStyle(color: Colors.black)),
               Row(
                 children: [
                   Expanded(
                     child: CheckboxListTile(
-                      title: Text('Bold', style: TextStyle(color: Colors.black)),
+                      title: Text(AppLocalizations.of(context)!.translate('bold'), style: TextStyle(color: Colors.black)),
                       value: settingsProvider.isBold,
                       onChanged: (value) {
                         settingsProvider.toggleBold();
@@ -76,7 +77,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: CheckboxListTile(
-                      title: Text('Italic', style: TextStyle(color: Colors.black)),
+                      title: Text(AppLocalizations.of(context)!.translate('italic'), style: TextStyle(color: Colors.black)),
                       value: settingsProvider.isItalic,
                       onChanged: (value) {
                         settingsProvider.toggleItalic();
@@ -87,7 +88,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               SwitchListTile(
-                title: Text('24-Hour Format', style: TextStyle(color: Colors.black)),
+                title: Text(AppLocalizations.of(context)!.translate('24_hour_format'), style: TextStyle(color: Colors.black)),
                 value: settingsProvider.is24HourFormat,
                 onChanged: (value) {
                   settingsProvider.toggleTimeFormat();
@@ -95,7 +96,36 @@ class SettingsScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                'Location:',
+                AppLocalizations.of(context)!.translate('language'),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              DropdownButton<Locale>(
+                value: settingsProvider.locale,
+                onChanged: (Locale? newLocale) {
+                  settingsProvider.setLocale(newLocale!);
+                },
+                items: <Locale>[
+                  Locale('en'),
+                  Locale('ar'),
+                ].map<DropdownMenuItem<Locale>>((Locale locale) {
+                  return DropdownMenuItem<Locale>(
+                    value: locale,
+                    child: Text(
+                      locale.languageCode == 'en'
+                          ? AppLocalizations.of(context)!.translate('english')
+                          : AppLocalizations.of(context)!.translate('arabic'),
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  );
+                }).toList(),
+              ),
+              SizedBox(height: 20),
+              Text(
+                AppLocalizations.of(context)!.translate('location'),
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -105,14 +135,14 @@ class SettingsScreen extends StatelessWidget {
               Text(
                 prayerTimesProvider.location.isNotEmpty
                     ? prayerTimesProvider.location
-                    : 'Fetching location...',
+                    : AppLocalizations.of(context)!.translate('fetching'),
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
               SizedBox(height: 20),
               Text(
-                'Data Info:',
+                AppLocalizations.of(context)!.translate('data_info'),
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -121,14 +151,14 @@ class SettingsScreen extends StatelessWidget {
               ),
               Text(
                 prayerTimesProvider.isCachedData
-                    ? 'Data loaded from cache'
-                    : 'Data fetched from the API',
+                    ? AppLocalizations.of(context)!.translate('data_loaded_from_cache')
+                    : AppLocalizations.of(context)!.translate('data_fetched_from_api'),
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
               Text(
-                'Date Range: Jan 1, ${DateTime.now().year} - Dec 31, ${DateTime.now().year}',
+                AppLocalizations.of(context)!.translate('date_range').replaceFirst('{year}', DateTime.now().year.toString()),
                 style: TextStyle(
                   color: Colors.black,
                 ),

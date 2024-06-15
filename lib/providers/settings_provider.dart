@@ -19,6 +19,9 @@ class SettingsProvider with ChangeNotifier {
   bool _isItalic = false;
   bool get isItalic => _isItalic;
 
+  Locale _locale = Locale('en');
+  Locale get locale => _locale;
+
   void toggleDarkMode() {
     _isDarkMode = !_isDarkMode;
     notifyListeners();
@@ -46,6 +49,11 @@ class SettingsProvider with ChangeNotifier {
 
   void toggleItalic() {
     _isItalic = !_isItalic;
+    notifyListeners();
+  }
+
+  void setLocale(Locale locale) {
+    _locale = locale;
     notifyListeners();
   }
 }
