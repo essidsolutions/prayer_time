@@ -1,43 +1,58 @@
+// services/location_service.dart
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+import '../errors/location_errors.dart';
 
 class LocationService {
   Future<Position> getCurrentLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
 
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
+    try {
+      // Check if location services are enabled
+      serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        throw LocationError('Location services are disabled.');
       }
-    }
 
-    if (permission == LocationPermission.deniedForever) {
-      return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
-    }
+      // Check for location permissions
+      permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied) {
+          throw LocationError('Location permissions are denied');
+        }
+      }
 
-    return await Geolocator.getCurrentPosition();
+      if (permission == LocationPermission.deniedForever) {
+        throw LocationError(
+            'Location permissions are permanently denied, we cannot request permissions.');
+      }
+
+      // Get the current position
+      Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      return position;
+    } catch (e) {
+      throw LocationError('Failed to get current location: $e');
+    }
   }
 
   Future<String> getAddressFromCoordinates(Position position) async {
     try {
+      // Get placemarks from coordinates
       List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
       if (placemarks.isEmpty) {
-        throw Exception('No placemarks found');
+        throw LocationError('No placemarks found');
       }
+
+      // Construct address string
       Placemark place = placemarks[0];
-      return "${place.locality}, ${place.country}";
+      String locality = place.locality ?? 'Unknown locality';
+      String country = place.country ?? 'Unknown country';
+      return "$locality, $country";
     } catch (e) {
-      print('Error fetching address: $e');
-      return 'Unknown location';
+      print('Error fetching address: $e'); // Detailed error logging
+      return 'Unknown location'; // Fallback message
     }
   }
 }

@@ -1,3 +1,4 @@
+// main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +8,7 @@ import 'screens/home_screen.dart';
 import 'localizations/app_localizations.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -28,19 +29,19 @@ class MyApp extends StatelessWidget {
               brightness: settingsProvider.isDarkMode ? Brightness.dark : Brightness.light,
               textTheme: TextTheme(
                 titleLarge: TextStyle(
-                  fontFamily: settingsProvider.selectedFont,
+                  fontFamilyFallback: ['NotoSans', 'Roboto', 'Arial', 'sans-serif'],
                   fontSize: settingsProvider.fontSize,
                   fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
                   fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
                 ),
                 bodyLarge: TextStyle(
-                  fontFamily: settingsProvider.selectedFont,
+                  fontFamilyFallback: ['NotoSans', 'Roboto', 'Arial', 'sans-serif'],
                   fontSize: settingsProvider.fontSize,
                   fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
                   fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
                 ),
                 bodyMedium: TextStyle(
-                  fontFamily: settingsProvider.selectedFont,
+                  fontFamilyFallback: ['NotoSans', 'Roboto', 'Arial', 'sans-serif'],
                   fontSize: settingsProvider.fontSize,
                   fontWeight: settingsProvider.isBold ? FontWeight.bold : FontWeight.normal,
                   fontStyle: settingsProvider.isItalic ? FontStyle.italic : FontStyle.normal,
@@ -55,10 +56,10 @@ class MyApp extends StatelessWidget {
               GlobalCupertinoLocalizations.delegate,
             ],
             supportedLocales: [
-              Locale('en', ''),
-              Locale('ar', ''),
+              const Locale('en', ''),
+              const Locale('ar', ''),
             ],
-            home: HomeScreen(),
+            home: const HomeScreen(),
           );
         },
       ),

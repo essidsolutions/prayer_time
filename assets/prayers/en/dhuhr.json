@@ -1,0 +1,395 @@
+{
+  "DhuhrPrayer": {
+    "name": "Dhuhr",
+    "time": "Noon",
+    "total_rakaa": 4,
+    "estimated_duration_minutes": 15,
+    "steps": [
+      {
+        "step": 1,
+        "step_id": "dhuhr_step_1",
+        "title": "Intention",
+        "description": "Make the intention to perform Dhuhr prayer.",
+        "action": "state_intention"
+      },
+      {
+        "step": 2,
+        "step_id": "dhuhr_step_2",
+        "title": "Takbiratul Ihram",
+        "description": "Say 'Allahu Akbar' to begin the prayer.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 3,
+        "step_id": "dhuhr_step_3",
+        "title": "Opening Supplication",
+        "description": "Recite the opening supplication (Du'a Al-Istiftah).",
+        "action": "recite_dua_istiftah"
+      },
+      {
+        "step": 4,
+        "step_id": "dhuhr_step_4",
+        "title": "Surah Al-Fatiha",
+        "description": "Recite Surah Al-Fatiha.",
+        "action": "recite_surah_fatiha"
+      },
+      {
+        "step": 5,
+        "step_id": "dhuhr_step_5",
+        "title": "Recite a Surah",
+        "description": "Recite another Surah (typically Surah Al-Ikhlas).",
+        "action": "recite_surah"
+      },
+      {
+        "step": 6,
+        "step_id": "dhuhr_step_6",
+        "title": "Takbir before Ruku'",
+        "description": "Say 'Allahu Akbar' before going into Ruku' (bowing).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 7,
+        "step_id": "dhuhr_step_7",
+        "title": "Ruku'",
+        "description": "Go into Ruku' (bowing).",
+        "action": "perform_ruku"
+      },
+      {
+        "step": 8,
+        "step_id": "dhuhr_step_8",
+        "title": "Rise from Ruku'",
+        "description": "Rise from Ruku' saying 'Sami' Allahu liman hamidah' and then 'Rabbana laka al-hamd'.",
+        "action": "rise_from_ruku"
+      },
+      {
+        "step": 9,
+        "step_id": "dhuhr_step_9",
+        "title": "Takbir before Sujud",
+        "description": "Say 'Allahu Akbar' before going into Sujud (prostration).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 10,
+        "step_id": "dhuhr_step_10",
+        "title": "First Sujud",
+        "description": "Go into Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 11,
+        "step_id": "dhuhr_step_11",
+        "title": "Takbir before Sitting",
+        "description": "Say 'Allahu Akbar' before sitting up from Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 12,
+        "step_id": "dhuhr_step_12",
+        "title": "Jalsa",
+        "description": "Sit briefly after the first Sujud.",
+        "action": "perform_jalsa"
+      },
+      {
+        "step": 13,
+        "step_id": "dhuhr_step_13",
+        "title": "Takbir before Second Sujud",
+        "description": "Say 'Allahu Akbar' before going into the second Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 14,
+        "step_id": "dhuhr_step_14",
+        "title": "Second Sujud",
+        "description": "Go into the second Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 15,
+        "step_id": "dhuhr_step_15",
+        "title": "Stand for Second Raka'a",
+        "description": "Stand up for the second Raka'a saying 'Allahu Akbar'.",
+        "action": "stand_up"
+      },
+      {
+        "step": 16,
+        "step_id": "dhuhr_step_16",
+        "title": "Surah Al-Fatiha (Second Raka'a)",
+        "description": "Recite Surah Al-Fatiha.",
+        "action": "recite_surah_fatiha"
+      },
+      {
+        "step": 17,
+        "step_id": "dhuhr_step_17",
+        "title": "Recite a Surah (Second Raka'a)",
+        "description": "Recite another Surah (typically Surah Al-Ikhlas).",
+        "action": "recite_surah"
+      },
+      {
+        "step": 18,
+        "step_id": "dhuhr_step_18",
+        "title": "Takbir before Ruku' (Second Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Ruku' (bowing).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 19,
+        "step_id": "dhuhr_step_19",
+        "title": "Ruku' (Second Raka'a)",
+        "description": "Go into Ruku' (bowing).",
+        "action": "perform_ruku"
+      },
+      {
+        "step": 20,
+        "step_id": "dhuhr_step_20",
+        "title": "Rise from Ruku' (Second Raka'a)",
+        "description": "Rise from Ruku' saying 'Sami' Allahu liman hamidah' and then 'Rabbana laka al-hamd'.",
+        "action": "rise_from_ruku"
+      },
+      {
+        "step": 21,
+        "step_id": "dhuhr_step_21",
+        "title": "Takbir before Sujud (Second Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Sujud (prostration).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 22,
+        "step_id": "dhuhr_step_22",
+        "title": "First Sujud (Second Raka'a)",
+        "description": "Go into Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 23,
+        "step_id": "dhuhr_step_23",
+        "title": "Takbir before Sitting (Second Raka'a)",
+        "description": "Say 'Allahu Akbar' before sitting up from Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 24,
+        "step_id": "dhuhr_step_24",
+        "title": "Jalsa (Second Raka'a)",
+        "description": "Sit briefly after the first Sujud.",
+        "action": "perform_jalsa"
+      },
+      {
+        "step": 25,
+        "step_id": "dhuhr_step_25",
+        "title": "Takbir before Second Sujud (Second Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into the second Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 26,
+        "step_id": "dhuhr_step_26",
+        "title": "Second Sujud (Second Raka'a)",
+        "description": "Go into the second Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 27,
+        "step_id": "dhuhr_step_27",
+        "title": "Stand for Third Raka'a",
+        "description": "Stand up for the third Raka'a saying 'Allahu Akbar'.",
+        "action": "stand_up"
+      },
+      {
+        "step": 28,
+        "step_id": "dhuhr_step_28",
+        "title": "Surah Al-Fatiha (Third Raka'a)",
+        "description": "Recite Surah Al-Fatiha.",
+        "action": "recite_surah_fatiha"
+      },
+      {
+        "step": 29,
+        "step_id": "dhuhr_step_29",
+        "title": "Recite a Surah (Third Raka'a)",
+        "description": "Recite another Surah (typically Surah Al-Ikhlas).",
+        "action": "recite_surah"
+      },
+      {
+        "step": 30,
+        "step_id": "dhuhr_step_30",
+        "title": "Takbir before Ruku' (Third Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Ruku' (bowing).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 31,
+        "step_id": "dhuhr_step_31",
+        "title": "Ruku' (Third Raka'a)",
+        "description": "Go into Ruku' (bowing).",
+        "action": "perform_ruku"
+      },
+      {
+        "step": 32,
+        "step_id": "dhuhr_step_32",
+        "title": "Rise from Ruku' (Third Raka'a)",
+        "description": "Rise from Ruku' saying 'Sami' Allahu liman hamidah' and then 'Rabbana laka al-hamd'.",
+        "action": "rise_from_ruku"
+      },
+      {
+        "step": 33,
+        "step_id": "dhuhr_step_33",
+        "title": "Takbir before Sujud (Third Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Sujud (prostration).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 34,
+        "step_id": "dhuhr_step_34",
+        "title": "First Sujud (Third Raka'a)",
+        "description": "Go into Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 35,
+        "step_id": "dhuhr_step_35",
+        "title": "Takbir before Sitting (Third Raka'a)",
+        "description": "Say 'Allahu Akbar' before sitting up from Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 36,
+        "step_id": "dhuhr_step_36",
+        "title": "Jalsa (Third Raka'a)",
+        "description": "Sit briefly after the first Sujud.",
+        "action": "perform_jalsa"
+      },
+      {
+        "step": 37,
+        "step_id": "dhuhr_step_37",
+        "title": "Takbir before Second Sujud (Third Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into the second Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 38,
+        "step_id": "dhuhr_step_38",
+        "title": "Second Sujud (Third Raka'a)",
+        "description": "Go into the second Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 39,
+        "step_id": "dhuhr_step_39",
+        "title": "Stand for Fourth Raka'a",
+        "description": "Stand up for the fourth Raka'a saying 'Allahu Akbar'.",
+        "action": "stand_up"
+      },
+      {
+        "step": 40,
+        "step_id": "dhuhr_step_40",
+        "title": "Surah Al-Fatiha (Fourth Raka'a)",
+        "description": "Recite Surah Al-Fatiha.",
+        "action": "recite_surah_fatiha"
+      },
+      {
+        "step": 41,
+        "step_id": "dhuhr_step_41",
+        "title": "Recite a Surah (Fourth Raka'a)",
+        "description": "Recite another Surah (typically Surah Al-Ikhlas).",
+        "action": "recite_surah"
+      },
+      {
+        "step": 42,
+        "step_id": "dhuhr_step_42",
+        "title": "Takbir before Ruku' (Fourth Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Ruku' (bowing).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 43,
+        "step_id": "dhuhr_step_43",
+        "title": "Ruku' (Fourth Raka'a)",
+        "description": "Go into Ruku' (bowing).",
+        "action": "perform_ruku"
+      },
+      {
+        "step": 44,
+        "step_id": "dhuhr_step_44",
+        "title": "Rise from Ruku' (Fourth Raka'a)",
+        "description": "Rise from Ruku' saying 'Sami' Allahu liman hamidah' and then 'Rabbana laka al-hamd'.",
+        "action": "rise_from_ruku"
+      },
+      {
+        "step": 45,
+        "step_id": "dhuhr_step_45",
+        "title": "Takbir before Sujud (Fourth Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into Sujud (prostration).",
+        "action": "say_takbir"
+      },
+      {
+        "step": 46,
+        "step_id": "dhuhr_step_46",
+        "title": "First Sujud (Fourth Raka'a)",
+        "description": "Go into Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 47,
+        "step_id": "dhuhr_step_47",
+        "title": "Takbir before Sitting (Fourth Raka'a)",
+        "description": "Say 'Allahu Akbar' before sitting up from Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 48,
+        "step_id": "dhuhr_step_48",
+        "title": "Jalsa (Fourth Raka'a)",
+        "description": "Sit briefly after the first Sujud.",
+        "action": "perform_jalsa"
+      },
+      {
+        "step": 49,
+        "step_id": "dhuhr_step_49",
+        "title": "Takbir before Second Sujud (Fourth Raka'a)",
+        "description": "Say 'Allahu Akbar' before going into the second Sujud.",
+        "action": "say_takbir"
+      },
+      {
+        "step": 50,
+        "step_id": "dhuhr_step_50",
+        "title": "Second Sujud (Fourth Raka'a)",
+        "description": "Go into the second Sujud (prostration).",
+        "action": "perform_sujud"
+      },
+      {
+        "step": 51,
+        "step_id": "dhuhr_step_51",
+        "title": "Tashahhud",
+        "description": "After the second Sujud of the fourth Raka'a, sit for Tashahhud.",
+        "action": "perform_tashahhud"
+      },
+      {
+        "step": 52,
+        "step_id": "dhuhr_step_52",
+        "title": "Recite Tashahhud",
+        "description": "Recite the Tashahhud.",
+        "action": "recite_tashahhud"
+      },
+      {
+        "step": 53,
+        "step_id": "dhuhr_step_53",
+        "title": "Salat Ibrahimiyya",
+        "description": "Recite Salat Ibrahimiyya.",
+        "action": "recite_salat_ibrahimiyya"
+      },
+      {
+        "step": 54,
+        "step_id": "dhuhr_step_54",
+        "title": "End Prayer - Right",
+        "description": "End the prayer by turning your head to the right and saying 'Assalamu Alaikum wa Rahmatullah'.",
+        "action": "say_assalamu_alaikum_right"
+      },
+      {
+        "step": 55,
+        "step_id": "dhuhr_step_55",
+        "title": "End Prayer - Left",
+        "description": "Turn your head to the left and repeat 'Assalamu Alaikum wa Rahmatullah'.",
+        "action": "say_assalamu_alaikum_left"
+      }
+    ]
+  }
+}

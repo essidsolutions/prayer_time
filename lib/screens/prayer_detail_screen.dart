@@ -1,6 +1,10 @@
+// prayer_detail_screen.dart
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import '../providers/settings_provider.dart';
 
 class PrayerDetailScreen extends StatefulWidget {
   final String prayerName;
@@ -17,33 +21,17 @@ class _PrayerDetailScreenState extends State<PrayerDetailScreen> {
   bool isPlaying = false;
 
   Future<Map<String, dynamic>> loadPrayerSteps(BuildContext context) async {
-    String fileName;
-    switch (widget.prayerName.toLowerCase()) {
-      case 'fajr':
-        fileName = 'prayers/fajr.json';
-        break;
-      case 'sunrise':
-        fileName = 'prayers/sunrise.json';
-        break;
-      case 'dhuhr':
-        fileName = 'prayers/dhuhr.json';
-        break;
-      case 'asr':
-        fileName = 'prayers/asr.json';
-        break;
-      case 'maghrib':
-        fileName = 'prayers/maghrib.json';
-        break;
-      case 'isha':
-        fileName = 'prayers/isha.json';
-        break;
-      default:
-        throw Exception('Unknown prayer name: ${widget.prayerName}');
-    }
+    final locale = Provider.of<SettingsProvider>(context, listen: false).locale.languageCode;
+    final fileName = 'prayers/$locale/${widget.prayerName.toLowerCase()}.json';
 
-    String data = await DefaultAssetBundle.of(context).loadString(fileName);
-    final jsonResult = json.decode(data);
-    return jsonResult["${widget.prayerName[0].toUpperCase()}${widget.prayerName.substring(1)}Prayer"];
+    try {
+      final data = await rootBundle.loadString(fileName);
+      final jsonResult = json.decode(data);
+      return jsonResult;
+    } catch (e) {
+      print('Error loading prayer steps: $e');
+      throw Exception('Error loading prayer steps for ${widget.prayerName}');
+    }
   }
 
   Future<void> playAudioSteps() async {
@@ -54,7 +42,7 @@ class _PrayerDetailScreenState extends State<PrayerDetailScreen> {
     for (var step in steps) {
       if (!isPlaying) break; // Stop if user interrupts
 
-      String audioFilePath = 'audio/${widget.prayerName.toLowerCase()}_${step['step_id']}.mp3';
+      String audioFilePath = 'assets/audio/${widget.prayerName.toLowerCase()}_${step['step_id']}.mp3';
       print('Playing: $audioFilePath'); // Debugging info
 
       await audioPlayer.play(DeviceFileSource(audioFilePath));

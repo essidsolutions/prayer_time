@@ -9,17 +9,36 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="settings light">
-      <change afterPath="$PROJECT_DIR$/assets/lang/ar.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/lang/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/localizations/app_localizations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="aa3823cc-8802-43b5-9ec5-26a73b14614d" name="Changes" comment="adding languages">
+      <change afterPath="$PROJECT_DIR$/assets/fonts/NotoSans/NotoSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/NotoSans/NotoSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/NotoSansArabic/NotoSansArabic-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/NotoSansArabic/NotoSansArabic-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/asr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/dhuhr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/fajr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/isha.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/maghrib.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/prayers/en/sunrise.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/create_files_json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/errors/general_errors.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/errors/location_errors.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/errors/prayer_time_errors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/asr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/asr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/dhuhr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/dhuhr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/fajr.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/الفجر.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/isha.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/isha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/maghrib.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/maghrib.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/prayers/sunrise.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/prayers/ar/sunrise.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/localizations/app_localizations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/localizations/app_localizations.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers/settings_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/settings_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/providers/prayer_times_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/providers/prayer_times_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/prayer_detail_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/location_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/location_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/prayer_time_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,22 +105,22 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mcessid/StudioProjects/prayer_time/assets/fonts/Roboto",
+    "last_opened_file_path": "/Users/mcessid/Documents/GitHub/prayer_time/assets/prayers/ar",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/prayers/ar" />
+      <recent name="$PROJECT_DIR$/assets/fonts/NotoSansArabic" />
+      <recent name="$PROJECT_DIR$/assets/fonts/NotoSans" />
       <recent name="$PROJECT_DIR$/assets/fonts/Roboto" />
       <recent name="$PROJECT_DIR$/assets/fonts/Lato" />
-      <recent name="$PROJECT_DIR$/assets/fonts" />
-      <recent name="$PROJECT_DIR$/assets/audio" />
-      <recent name="$PROJECT_DIR$/lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/prayers/en" />
       <recent name="$PROJECT_DIR$/assets/fonts/OpenSans" />
       <recent name="$PROJECT_DIR$/assets/prayers" />
     </key>
@@ -139,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718398634991</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding languages">
+      <option name="closed" value="true" />
+      <created>1718438332393</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718438332393</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -152,6 +179,7 @@
     <MESSAGE value="adding prayer steps" />
     <MESSAGE value="adding fonts" />
     <MESSAGE value="settings light" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings light" />
+    <MESSAGE value="adding languages" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding languages" />
   </component>
 </project>

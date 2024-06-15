@@ -1,3 +1,4 @@
+// screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/prayer_times_provider.dart';
@@ -5,7 +6,6 @@ import '../providers/settings_provider.dart';
 import '../widgets/prayer_tile.dart';
 import 'prayer_detail_screen.dart';
 import 'settings_screen.dart';
-import '../utils/date_utils.dart';
 import 'package:intl/intl.dart';
 import '../models/prayer_time_model.dart';
 import '../localizations/app_localizations.dart';
@@ -198,7 +198,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       {'name': AppLocalizations.of(context)!.translate('asr'), 'time': prayerTimes.asr, 'icon': Icons.brightness_7, 'iconColor': Colors.deepOrange},
                       {'name': AppLocalizations.of(context)!.translate('maghrib'), 'time': prayerTimes.maghrib, 'icon': Icons.brightness_4, 'iconColor': Colors.redAccent},
                       {'name': AppLocalizations.of(context)!.translate('isha'), 'time': prayerTimes.isha, 'icon': Icons.brightness_3, 'iconColor': Colors.indigo},
-                      {'name': AppLocalizations.of(context)!.translate('midnight'), 'time': prayerTimes.midnight, 'icon': Icons.access_time, 'iconColor': Colors.cyan},
                       {'name': AppLocalizations.of(context)!.translate('last_third'), 'time': prayerTimes.lastThird, 'icon': Icons.access_time, 'iconColor': Colors.deepPurple},
                     ];
 
